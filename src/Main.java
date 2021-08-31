@@ -1,7 +1,4 @@
 import com.sun.org.apache.xml.internal.security.utils.Base64;
-import org.bouncycastle.jcajce.provider.util.SecretKeyUtil;
-
-import java.math.BigInteger;
 import java.security.*;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
@@ -18,6 +15,8 @@ public class Main {
         System.out.println(System.getProperty("java.version"));
         Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
         KeyFactory kf = KeyFactory.getInstance("RSA","BC");
+
+        /*测试分支合并1234*/
         String privateKey="MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAINdmv+b3U4YUYV4enHxbz/sE+uc\n" +
                 "GmK2TkBqtzB5fi9TBIk1SYbuykxtgZf5z16WphaAjoVxyUKJJwuTvVSNvPlW7F1lCXfoojweaXjX\n" +
                 "CTWUapg6pYxscnf9N9aVzmZlbMZYTC0yopSC3W9y119sgL/fA7QoxAbUj8lyLDhXzTGLAgMBAAEC\n" +
