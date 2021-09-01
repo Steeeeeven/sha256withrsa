@@ -10,14 +10,19 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         // 生成RSA公钥/私钥:
-        //KeyPairGenerator kpGen = KeyPairGenerator.getInstance("RSA");
-        //kpGen.initialize(1024);
-        //KeyPair kp = kpGen.generateKeyPair();
-        //PrivateKey sk = kp.getPrivate();
-        //PublicKey pk = kp.getPublic();
+        KeyPairGenerator kpGen = KeyPairGenerator.getInstance("RSA");
+        kpGen.initialize(1024);
+        KeyPair kp = kpGen.generateKeyPair();
+        PrivateKey pksk = kp.getPrivate();
+        PublicKey pkpk = kp.getPublic();
+        System.out.println(pkpk.toString());
+        System.out.println(pksk.toString());
+        
         System.out.println(System.getProperty("java.version"));
         Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
         KeyFactory kf = KeyFactory.getInstance("RSA","BC");
+
+        /*测试分支合并1*/
         String privateKey="MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAINdmv+b3U4YUYV4enHxbz/sE+uc\n" +
                 "GmK2TkBqtzB5fi9TBIk1SYbuykxtgZf5z16WphaAjoVxyUKJJwuTvVSNvPlW7F1lCXfoojweaXjX\n" +
                 "CTWUapg6pYxscnf9N9aVzmZlbMZYTC0yopSC3W9y119sgL/fA7QoxAbUj8lyLDhXzTGLAgMBAAEC\n" +
